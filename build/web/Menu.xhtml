@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <link rel="stylesheet" href="./style.css"></link>
+        <title>Ingresar participantes</title>
+    </h:head>
+    <h:body>
+        <style>
+            /* Cta */
+            #form .cta{
+                height:62px !important;
+                transform:translatex(0px) translatey(14px);
+                padding-left:21px;
+                padding-top:9px;
+                box-shadow:-3px 3px 7px 3px rgba(2,2,2,0.2);
+                text-align:center;
+                border-style:solid;
+                border-color:#6d7cbf;
+                border-width:2px;
+            }
+
+            /* Form */
+            #form{
+                transform:translatex(85px) translatey(-6px);
+            }
+
+            /* Cta */
+            #form .cta-l{
+                transform:translatex(0px) translatey(6px);
+                padding-left:66px;
+                box-shadow:1px 3px 9px 4px rgba(2,2,2,0.2);
+                float:none;
+                clear:none;
+                display:inline-flex;
+                grid-template-columns:50px;
+                text-align:center;
+            }
+
+            /* Thead */
+            #open-modal tr .thead{
+                border-top-left-radius:0px;
+                border-top-right-radius:0px;
+                border-bottom-left-radius:0px;
+                border-bottom-right-radius:0px;
+                background-color:rgba(255,255,255,0.443);
+                cursor:auto;
+                transform:translatex(0px) translatey(0px);
+                overflow:auto;
+            }
+
+            /* Table Data */
+            #open-modal div td{
+                background-color:#ffffff;
+            }
+
+            /* Heading */
+            #open-modal div h2{
+                border-top-left-radius:10px;
+                border-top-right-radius:10px;
+                border-bottom-left-radius:10px;
+                border-bottom-right-radius:10px;
+            }
+        </style>
+        <header class="hero">
+            <div class="conect">
+                <a  href="./index.xhtml"><img src="https://img.icons8.com/fluency-systems-regular/50/000000/back.png"/></a>
+            </div>
+            <figure class="picture">
+                <img style="border-radius: 1000px" src="Abel.gif"  width="500px" height="500px" class="logo"/>
+            </figure>
+            <div class="texts">
+                <h:form id="form">
+                    <h1 class="title">Registros</h1>
+                    <p class="text">Podras realizar operaciones propias de un CRUD, ademas visualizar los datos almacenados para cada campo.</p>
+                    <a style="height: 80px" class="cta" href="./IngPonente.xhtml">Ingresar producto</a>
+                    <a style="padding-left:27px !important;"  value=" " class="cta-l" href="consultas.xhtml" >consultas</a>
+                </h:form>
+            </div> 
+            <div id="open-modal" class="modal-window">
+                <div>
+                    <a href="#" title="Close" class="modal-close">X</a>
+                    <h2>Datos registrados</h2>
+                    <div class="itemModal despl">
+                        <h:form>
+                            <p:dataTable  class="table" var="ponente" value="#{pp.arrPonente}">
+                                <p:column class="thead" headerText="id">
+                                    <h:outputText value="#{pp.logis.empresaid}"/>
+                                </p:column>
+                                <p:column  class="thead" headerText="Nombre">
+                                    <h:outputText value="#{pp.logis.nombre}"/>
+                                </p:column>
+                                <p:column class="thead" headerText="Nro_registrado">
+                                    <h:outputText value="#{pp.logis.telefono}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+            <div id="open-modal2" class="modal-window">
+                <div>
+                    <a href="#" title="Close" class="modal-close">X</a>
+                    <h2>Empresa</h2>
+                    <div class="itemModal despl">
+                        <h:form>
+                            <p:dataTable  class="table" var="logistc" value="#{pp.arrLogist}">
+                                <p:column class="thead" headerText="id">
+                                    <h:outputText value="#{pp.logis.empresaid}"/>
+                                </p:column>
+                                <p:column  class="thead" headerText="Nombre">
+                                    <h:outputText value="#{pp.logis.nombre}"/>
+                                </p:column>
+                                <p:column class="thead" headerText="Nro_registrado">
+                                    <h:outputText value="#{pp.logis.telefono}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </h:body>
+</html>
+

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <link rel="stylesheet" href="./style.css"></link>
+        <title>INICIO</title>
+    </h:head>
+    <h:body >
+
+     
+        <header class="hero">
+            <figure class="picture">
+                <img style="border-radius: 1000px" src="Abel.gif"  width="500px" height="500px" class="logo"/>
+
+            </figure>
+
+            <img src="icon.png"  width="500px" height="500px" class="icon"/>
+
+            <div class="texts">
+                <h:form id="form">
+                    <h1 class="title">Taller_3</h1>
+                    <p class="text">Siguiendo la gia brindada por el profesor, se realizo este programa que cumple los items plateados, para su realisacion</p>
+                    <a class="cta" href="./Menu.xhtml">Registrar datos</a>
+                    <a style="width: 190px" value="Ver" class="cta-l" href="#open-modal" >Ver datos registrados</a>
+
+                </h:form>
+            </div> 
+            <h:form>
+
+                <div id="open-modal" class="modal-window">
+                    <div>
+                        <a href="#" title="Close" class="modal-close">X</a>
+                        <h2>DATOS</h2>
+                        <div class="itemModal despl">
+                            <h:form>
+                                <h3>Datos registrados</h3>
+                                <br></br>
+
+                                <p:commandButton value="Actualizar" action="#{consultasbean.actualizar()}" update="Tableuse" style="margin-left:60px"/>
+                                <br></br>
+                                <p:dataTable id="Tableuse" value="#{consultasbean.listadatos}" var="Usu">
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <p:outputLabel value="ID"/>
+                                        </f:facet>
+                                        <p:outputLabel value="#{Usu.id}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <p:outputLabel value="NOMBRE"/>
+                                        </f:facet>
+                                        <p:outputLabel value="#{Usu.nombre}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <p:outputLabel value="CANTIDAD"/>
+                                        </f:facet>
+                                        <p:outputLabel value="#{Usu.cantidad}"/>
+                                    </p:column>
+                                    <p:column>
+                                        <f:facet name="header">
+                                            <p:outputLabel value="PRECIO"/>
+                                        </f:facet>
+                                        <p:outputLabel value="#{Usu.precio}"/>
+                                    </p:column>
+                                </p:dataTable>
+                            </h:form>
+
+                        </div>
+                    </div>
+                </div>
+            </h:form>
+               <style>
+
+            /* Cta */
+            #form .cta-l{
+                padding-left:27px !important;
+            }
+
+
+            /* Image */
+            .icon{
+                height:74px;
+                margin-left:0px;
+                width:113px;
+                min-height:119px;
+                transform:translatex(465px) translatey(50px);
+            }
+            /* Table Data */
+            .tbleW table tbody .jsfcrud_even_row td{
+                margin-left:0px;
+            }
+
+            /* Table Data */
+            .hero form #open-modal div .itemModal .tbleW table tbody .jsfcrud_even_row td{
+                width:383px !important;
+            }
+
+            /* Table Data */
+            .tbleW table tbody .jsfcrud_odd_row td{
+                background-color:#ffffff;
+            }
+
+        </style>
+        </header>
+    </h:body>
+</html>
+

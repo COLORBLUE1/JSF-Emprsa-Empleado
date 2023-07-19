@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Consultas</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <br></br>
+            <br></br>
+            <center> <h1>OPERACIONES CONSULTAS</h1> </center>
+            <br></br>
+            <br></br>
+   
+            <p:commandButton value="Actualizar - Mostrar" action="#{consultasbean.actualizar()}" update="Tableuse" style="margin-left:60px"/>
+            <br></br>
+            <br></br>
+            <p:outputLabel value="Digite nombre a buscar      " style="margin-left:60px"/>
+            <p:inputText value="#{consultasbean.textobusq}"/>
+            <p:commandButton value="  Buscar  " action="#{consultasbean.llenarusu()}" update="Tableuse" style="margin-left:20px"/>
+            <br></br>
+            <br></br>
+            <p:outputLabel value="Digite id a eliminar      " style="margin-left:95px"/>
+            <p:inputText value="#{consultasbean.id}"/>
+            <p:commandButton value="  Buscar  " action="#{consultasbean.llenarsinid()}" update="Tableuse" style="margin-left:20px"/>
+            <br></br>
+            <br></br>
+            <p:commandButton value="  Buscar entre 10.000 y 100.000 " action="#{consultasbean.llenarusunotext()}" update="Tableuse" style="margin-left:60px"/>
+            <br></br>
+            <br></br>
+            <p:commandButton value="  Buscar cantidad menor de 10 " action="#{consultasbean.menosde10()}" update="Tableuse" style="margin-left:60px"/>
+            <br></br>
+            <br></br>
+             <a  href="./Menu.xhtml"><img src="https://img.icons8.com/fluency-systems-regular/50/000000/back.png"/></a>
+         
+            <p:dataTable id="Tableuse" value="#{consultasbean.listadatos}" var="Usu">
+                <p:column>
+                    <f:facet name="header">
+                        <p:outputLabel value="ID"/>
+                    </f:facet>
+                    <p:outputLabel value="#{Usu.id}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:outputLabel value="NOMBRE"/>
+                    </f:facet>
+                    <p:outputLabel value="#{Usu.nombre}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:outputLabel value="CANTIDAD"/>
+                    </f:facet>
+                    <p:outputLabel value="#{Usu.cantidad}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <p:outputLabel value="PRECIO"/>
+                    </f:facet>
+                    <p:outputLabel value="#{Usu.precio}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+        <style>
+            /* Heading */
+            form h1{
+                font-family:Impact,Haettenschweiler,'Franklin Gothic Bold',Charcoal,'Helvetica Inserat','Bitstream Vera Sans Bold','Arial Black','sans serif';
+                text-align:center;
+
+            }
+
+            /* Form Division */
+            form{
+
+                background-image:url("resources/BG4.jpg");
+                background-size:contain;
+                background-blend-mode:lighten;
+                background-attachment:fixed;
+            }
+           /* Image */
+form a img{
+ display:inline-block;
+ transform:translatex(465px) translatey(-83px);
+}
+
+
+        </style>
+    </h:body>
+</html>
+

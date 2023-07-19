@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <link rel="stylesheet" href="./style.css"></link>
+        <title>Ingresar participantes</title>
+    </h:head>
+   <h:body>
+       
+       <style>
+           /* Span Tag */
+#form .cta span{
+ text-align:center;
+ transform:translatex(0px) translatey(0px);
+ padding-top:0px;
+ padding-right:0px;
+ padding-left:0px;
+}
+
+/* Cta */
+#form .cta{
+ height:58px;
+}
+
+/* Logo */
+.hero .picture img{
+ box-shadow:-4px 0px 12px 2px #000000;
+}
+
+/* Form */
+#form{
+ transform:translatex(36px) translatey(0px);
+}
+
+
+       </style>
+        <header class="hero">
+            <div class="conect">
+                <a href="./Menu.xhtml"><img src="https://img.icons8.com/fluency-systems-regular/50/000000/back.png"/></a>
+            </div>
+            <figure class="picture">
+                <img style="border-radius: 1000px" src="Abel.gif"  width="500px" height="500px" class="logo"/>
+
+
+            </figure>
+            <div class="texts">
+                <h:form id="form">
+                    <h1 class="title">Empleados</h1>
+                    <p class="text">Ingresar Empleados</p>
+                   <h:commandLink class="cta" action="#{productosController.prepareCreate}" value="#{bundle.ListProductosCreateLink}"/>
+                    <a style="width: 150px" class="cta-l"  href="./optionsPonent.xhtml" >CRUD</a>
+
+                </h:form>
+            </div> 
+            <h:form>
+                <p:dialog header="ingrese los datos" widgetVar="dlg1" minHeight="40" width="500" showEffect="fade" modal="true">
+                    <p:panelGrid id="datos" columns="1">
+                        <p:panelGrid columns="2">
+                             
+                            <h:outputText value="Nombre" />
+                            <p:inputText value="#{pp.ponente.numeroID}"/>
+                            <h:outputText value="Nro_ingreso" />
+                            <p:inputText value="#{pp.ponente.nombre}"/>
+                         
+                        </p:panelGrid>
+                        <p:commandButton value="Ingresar" update=":form" actionListener="#{pp.crearParticipante_Ponente()}" oncomplete="PF('dlg1').hide()"/>
+                    </p:panelGrid>
+                </p:dialog>
+            </h:form>
+        </header>
+    </h:body>
+</html>
+

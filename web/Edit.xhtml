@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditProductosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditProductosLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{productosController.selected.id}" title="#{bundle.EditProductosTitle_id}" required="true" requiredMessage="#{bundle.EditProductosRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditProductosLabel_cantidad}" for="cantidad" />
+                    <h:inputText id="cantidad" value="#{productosController.selected.cantidad}" title="#{bundle.EditProductosTitle_cantidad}" required="true" requiredMessage="#{bundle.EditProductosRequiredMessage_cantidad}"/>
+                    <h:outputLabel value="#{bundle.EditProductosLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{productosController.selected.nombre}" title="#{bundle.EditProductosTitle_nombre}" required="true" requiredMessage="#{bundle.EditProductosRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.EditProductosLabel_precio}" for="precio" />
+                    <h:inputText id="precio" value="#{productosController.selected.precio}" title="#{bundle.EditProductosTitle_precio}" required="true" requiredMessage="#{bundle.EditProductosRequiredMessage_precio}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{productosController.update}" value="#{bundle.EditProductosSaveLink}"/>
+                <br />
+                <br />
+                <a href="./optionsPonent.xhtml"><img src="https://img.icons8.com/fluency-systems-regular/50/000000/back.png"/></a>
+
+            </h:form>
+            <style>
+                /* Form Division */
+                form{
+                    text-align:center;
+                    margin-left:50% !important;
+                    margin-right:50% !important;
+                }
+
+                /* Heading */
+                h1{
+                    text-align:center;
+                }
+
+                /* Table */
+                form table{
+                    transform:translatex(-124px) translatey(-13px);
+                }
+            </style>
+        </ui:define>
+    </ui:composition>
+</html>
