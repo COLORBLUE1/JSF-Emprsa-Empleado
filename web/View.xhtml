@@ -1,65 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="/template.xhtml">
-        <ui:define name="title">
-            <h:outputText value="#{bundle.ViewProductosTitle}"></h:outputText>
-        </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewProductosLabel_id}"/>
-                    <h:outputText value="#{productosController.selected.id}" title="#{bundle.ViewProductosTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewProductosLabel_cantidad}"/>
-                    <h:outputText value="#{productosController.selected.cantidad}" title="#{bundle.ViewProductosTitle_cantidad}"/>
-                    <h:outputText value="#{bundle.ViewProductosLabel_nombre}"/>
-                    <h:outputText value="#{productosController.selected.nombre}" title="#{bundle.ViewProductosTitle_nombre}"/>
-                    <h:outputText value="#{bundle.ViewProductosLabel_precio}"/>
-                    <h:outputText value="#{productosController.selected.precio}" title="#{bundle.ViewProductosTitle_precio}"/>
-                </h:panelGrid>
-                <br />
-             
-                <br />
-               <a href="./optionsPonent.xhtml"><img src="https://img.icons8.com/fluency-systems-regular/50/000000/back.png"/></a>
-   
+<ui:composition template="/template.xhtml">
+    <ui:define name="title">
+        <h:outputText value="#{bundle.ViewProductosTitle}"></h:outputText>
+    </ui:define>
+    <ui:define name="body">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table" />
+        </h:panelGroup>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="#{bundle.ViewProductosLabel_id}" />
+                <h:outputText value="#{productosController.selected.id}" title="#{bundle.ViewProductosTitle_id}" />
+                <h:outputText value="#{bundle.ViewProductosLabel_cantidad}" />
+                <h:outputText value="#{productosController.selected.cantidad}"
+                    title="#{bundle.ViewProductosTitle_cantidad}" />
+                <h:outputText value="#{bundle.ViewProductosLabel_nombre}" />
+                <h:outputText value="#{productosController.selected.nombre}"
+                    title="#{bundle.ViewProductosTitle_nombre}" />
+                <h:outputText value="#{bundle.ViewProductosLabel_precio}" />
+                <h:outputText value="#{productosController.selected.precio}"
+                    title="#{bundle.ViewProductosTitle_precio}" />
+            </h:panelGrid>
+            <br />
 
-            </h:form>
-                       <style>
-                /* Form Division */
-form{
- text-align:center;
- margin-left:50% !important;
- margin-right:50% !important;
-}
-
-/* Heading */
-h1{
- text-align:center;
-}
-
-/* Table */
-form table{
- transform:translatex(-124px) translatey(-13px);
-}
-/* Table */
-form table{
- text-align:center;
- margin-left:auto;
- margin-right:auto !important;
- transform:translatex(-54px) translatey(0px) !important;
-}
+            <br />
+            <a href="./optionsPonent.xhtml"><img
+                    src="https://img.icons8.com/fluency-systems-regular/50/000000/back.png" /></a>
 
 
+        </h:form>
+        <style>
+            /* Form Division */
+            form {
+                text-align: center;
+                margin-left: 50% !important;
+                margin-right: 50% !important;
+            }
 
-            </style>
-        </ui:define>
-    </ui:composition>
+            /* Heading */
+            h1 {
+                text-align: center;
+            }
+
+            /* Table */
+            form table {
+                transform: translatex(-124px) translatey(-13px);
+            }
+
+            /* Table */
+            form table {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto !important;
+                transform: translatex(-54px) translatey(0px) !important;
+            }
+        </style>
+    </ui:define>
+</ui:composition>
 
 </html>
